@@ -122,3 +122,18 @@ setInterval(sendOrEditPinnedMessage, 60 * 60 * 1000);
 
 // ----------------- START -----------------
 console.log("✅ Telegram bot is running safely...");
+
+
+// ----------------- DUMMY HTTP SERVER (FOR RENDER WEB SERVICE) -----------------
+const express = require("express");
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => {
+  res.send("Telegram bot is running safely");
+});
+
+app.listen(PORT, () => {
+  console.log(`🌐 HTTP server listening on port ${PORT}`);
+});
